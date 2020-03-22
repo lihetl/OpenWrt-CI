@@ -212,10 +212,10 @@ jobs:
           du -h --max-depth=1 ./bin
 
       - name: Prepare artifact
-        run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
+        run: find ./friendlywrt-h5/out/ -type d -name "packages" | xargs rm -rf {}
 
       - name: Upload artifact
         uses: actions/upload-artifact@master
         with:
-          name: OpenWrt firmware
-          path: ./bin/targets/
+          name: FriendlyWrt
+          path: ./friendlywrt-h5/out/
